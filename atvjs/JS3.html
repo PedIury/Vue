@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="principal">
+        <input type="number" v-model="x">
+        <input type="number" v-model="y">
+        <div>
+            <button v-on:click="somar">Somar</button>
+            <button v-on:click="mult">Multiplicar</button>
+            <button v-on:click="divid">Dividir</button>
+            <button v-on:click="sub">Subtrair</button>
+        </div>
+       <p>Resultado: {{ resultado }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data(){
+                return{
+            x: 0, 
+            y: 0,
+            resultado: 0,
+
+                };
+        },
+        methods: {
+            somar(){
+           
+           this.resultado= parseInt(this.x)  + parseInt(this.y);
+
+            },
+           mult(){
+            this.resultado= parseInt(this.x)  * parseInt(this.y);
+           },
+           divid(){
+            this.resultado= parseInt(this.x)  / parseInt(this.y);
+           },
+            sub(){
+                this.resultado= parseInt(this.x)  - parseInt(this.y);
+            },
+        },
+    };
+    Vue.createApp(app).mount("#principal");
+
+
+    </script>
+</body>
+</html>
